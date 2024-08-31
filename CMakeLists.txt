@@ -164,6 +164,12 @@ else()
     file(GLOB HEADERS src/uvw/*.h src/uvw/*.hpp src/uvw/*.cpp)
 endif()
 
+add_executable(benchmark_libuv_udp benchmark/benchmark-libuv-udp.cpp)
+target_link_libraries(benchmark_libuv_udp uvw)
+
+add_executable(benchmark_uvw_udp benchmark/benchmark-uvw-udp.cpp)
+target_link_libraries(benchmark_uvw_udp uvw)
+
 #
 # Install targets
 #
